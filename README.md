@@ -16,10 +16,10 @@
 - [Architecture](#architecture)
 - [Dataset](#dataset)
 - [Results](#results)
-- [Installation](#installation)
+<!-- - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Training](#training)
-- [Evaluation](#evaluation)
+- [Evaluation](#evaluation) -->
 - [Project Structure](#project-structure)
 - [References](#references)
 - [Author](#author)
@@ -32,7 +32,7 @@ This project implements **U-Net architecture** for automated segmentation of Age
 Macular Degeneration (AMD) biomarkers in Optical Coherence Tomography (OCT) images.
 
 AMD is the leading cause of irreversible blindness in elderly populations worldwide. 
-Early and accurate detection of AMD biomarkers (drusen, fluid, atrophy) is critical 
+Early and accurate detection of AMD biomarkers (layer thickness) is critical 
 for timely intervention and treatment monitoring.
 
 **Motivation**: This project was developed as part of my research in medical imaging 
@@ -42,7 +42,7 @@ diagnosis support.
 ### 🎯 Objectives
 - Implement U-Net from scratch in PyTorch
 - Segment AMD biomarkers from OCT scans with high accuracy
-- Evaluate performance using clinical metrics (Dice, IoU, Sensitivity)
+- Evaluate performance using clinical metrics (Dice, IoU, Accuracy)
 - Create a reproducible and well-documented pipeline
 
 ---
@@ -57,7 +57,7 @@ diagnosis support.
 ✅ **Medical Imaging Pipeline**
 - Specialized preprocessing for OCT images
 - Data augmentation tailored for medical imaging
-- Clinical metrics (Dice coefficient, IoU, Sensitivity, Specificity)
+- Clinical metrics (Dice coefficient, IoU, Accuracy)
 
 ✅ **Reproducibility**
 - Seed setting for deterministic results
@@ -104,9 +104,8 @@ Output: Segmentation Mask (3 classes, 512×512)
 - Batch Normalization for training stability
 - ReLU activation functions
 - Dropout (p=0.2) for regularization
-- Adam optimizer with learning rate scheduling
 
-For detailed architecture explanation, see [docs/architecture.md](docs/architecture.md)
+<!-- For detailed architecture explanation, see [docs/architecture.md](docs/architecture.md) -->
 
 ---
 
@@ -117,7 +116,7 @@ For detailed architecture explanation, see [docs/architecture.md](docs/architect
   (publicly available)
 - **Size**: 110 OCT B-scans with expert annotations
 - **Classes**: 8 (Back ground, NFL, GCL-IPL, INL, OPL, ONL-ISM, ISE, OS-RPE )
-- **Resolution**: 512×512 pixels
+- **Resolution**: 496×768 pixels
 
 ### Preprocessing Pipeline
 
@@ -155,7 +154,7 @@ For detailed architecture explanation, see [docs/architecture.md](docs/architect
 ### Learning Curves
 
 <p align="center">
-  <img src="results/metrics/loss.png" alt="Loss Curves" width="800"/>
+  <img src="results/metrics/loss.png" alt="Loss Curves" width="500"/>
 </p>
 
 <!-- <p align="center">
@@ -173,7 +172,7 @@ For detailed architecture explanation, see [docs/architecture.md](docs/architect
 - ✅ Precise fluid boundary delineation (important for treatment monitoring)
 - ⚠️ Some under-segmentation in low-contrast regions (area for improvement)
 
-For detailed results analysis, see [results/comparison_table.md](results/comparison_table.md)
+<!-- For detailed results analysis, see [results/comparison_table.md](results/comparison_table.md) -->
 
 ---
 
@@ -184,6 +183,110 @@ For detailed results analysis, see [results/comparison_table.md](results/compari
 - CUDA 11.8+ (for GPU training)
 - 8 GB+ RAM recommended
 
+<!-- ### Setup
+```bash
+<i># Clone repository</i>
+git clone https://github.com/AnesSAD/OCT-AMD-Segmentation.git
+cd OCT-AMD-Segmentation
+
+<i># Create virtual environment</i>
+python -m venv venv
+source venv/bin/activate  <i># On Windows: venv\Scripts\activate</i>
+
+<i># Install dependencies</i>
+pip install -r requirements.txt
+```
+
+### Docker (Alternative)
+```bash
+<i># Build image</i>
+docker build -t oct-segmentation -f docker/Dockerfile .
+
+<i># Run container</i>
+docker run --gpus all -v $(pwd):/workspace oct-segmentation
+```
+
+---
+
+## ⚡ Quick Start
+### Setup
+```bash
+<i># Clone repository</i>
+git clone https://github.com/AnesSAD/OCT-AMD-Segmentation.git
+cd OCT-AMD-Segmentation
+
+<i># Create virtual environment</i>
+python -m venv venv
+source venv/bin/activate  <i># On Windows: venv\Scripts\activate</i>
+
+<i># Install dependencies</i>
+pip install -r requirements.txt
+```
+
+### Docker (Alternative)
+```bash
+<i># Build image</i>
+docker build -t oct-segmentation -f docker/Dockerfile .
+
+<i># Run container</i>
+docker run --gpus all -v $(pwd):/workspace oct-segmentation
+```
+
+---
+
+## ⚡ Quick Start
+### Setup
+```bash
+<i># Clone repository</i>
+git clone https://github.com/AnesSAD/OCT-AMD-Segmentation.git
+cd OCT-AMD-Segmentation
+
+<i># Create virtual environment</i>
+python -m venv venv
+source venv/bin/activate  <i># On Windows: venv\Scripts\activate</i>
+
+<i># Install dependencies</i>
+pip install -r requirements.txt
+```
+
+### Docker (Alternative)
+```bash
+<i># Build image</i>
+docker build -t oct-segmentation -f docker/Dockerfile .
+
+<i># Run container</i>
+docker run --gpus all -v $(pwd):/workspace oct-segmentation
+```
+
+---
+
+## ⚡ Quick Start
+### Setup
+```bash
+<i># Clone repository</i>
+git clone https://github.com/AnesSAD/OCT-AMD-Segmentation.git
+cd OCT-AMD-Segmentation
+
+<i># Create virtual environment</i>
+python -m venv venv
+source venv/bin/activate  <i># On Windows: venv\Scripts\activate</i>
+
+<i># Install dependencies</i>
+pip install -r requirements.txt
+```
+
+### Docker (Alternative)
+```bash
+<i># Build image</i>
+docker build -t oct-segmentation -f docker/Dockerfile .
+
+<i># Run container</i>
+docker run --gpus all -v $(pwd):/workspace oct-segmentation
+```
+
+--- -->
+
+<!-- ## ⚡ Quick Start
 ### Setup
 ```bash
 <i># Clone repository</i>
@@ -294,7 +397,7 @@ python src/evaluate.py \
 - **Specificity**: Minimize false positives
 - **Hausdorff Distance**: Boundary accuracy (clinical relevance)
 
----
+--- -->
 
 ## 📁 Project Structure
 ```
@@ -325,7 +428,7 @@ OCT-AMD-Segmentation/
    <i>*U-Net: Convolutional Networks for Biomedical Image Segmentation*</i>. 
    MICCAI 2015. [Paper](https://arxiv.org/abs/1505.04597)
 
-2. **AMD Detection**: [Recent paper you read this weekend]
+2. **AMD Detection**: Śpiewak, D., Drzyzga, Ł., Dorecka, M., & Wyględowska-Promieńska, D. (2024). Summary of the therapeutic options for patients with dry and neovascular AMD. Journal of Clinical Medicine, 13(14), 4227
 
 3. **OCT Imaging**: S. J. Chiu, M. J. Allingham, P. S. Mettu, S. W. Cousins, J. A. Izatt, S. Farsiu, "Kernel regression based segmentation of optical coherence tomography images with diabetic macular edema", ( BIOMEDICAL OPTICS EXPRESS), 6(4), pp. 1172-1194, April, 2015   
 ### Datasets
@@ -346,13 +449,11 @@ OCT-AMD-Segmentation/
 
 - 🎓 Mastère Spécialisé Big Data (UTT) | M2 Chimie Physique (Université Paris Cité)
 - 🔬 Research Intern — Computer Vision @ CNRS ITODYS (6 months)
-- 💼 Seeking 12-month alternance in Medical AI / Computer Vision (March 2026)
+- 💼 Seeking 6-month internship in Medical AI / Computer Vision (March 2026)
 
 **Contact**:
 - 📧 Email: asadaoui.pro@gmail.com
 - 💼 LinkedIn: [linkedin.com/in/anes-sadaoui](https://linkedin.com/in/anes-sadaoui)
-- 🐙 GitHub: [github.com/AnesSAD](https://github.com/AnesSAD)
-- 📱 Phone: +33 6 25 28 78 67
 
 ---
 
@@ -365,26 +466,25 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) file f
 ## 🙏 Acknowledgments
 
 - CNRS ITODYS laboratory for research training
-- RETOUCH Challenge organizers for the dataset
-- PyTorch team for the excellent framework
-- Medical imaging community for open-source contributions
+- Dr Stephanie Chiu and Pr. Sina Farsiu from Duke University for the dataset
+- MCOvision for specific training of computer vision on medical imaging
 
 ---
 
 ## 🔮 Future Work
 
 - [ ] Implement U-Net++ and Attention U-Net variants
-- [ ] Multi-scale feature fusion
+- [ ] Implet U-Net for fluid detection on CTO images
 - [ ] Ensemble methods for improved robustness
-- [ ] Real-time inference optimization (ONNX, TensorRT)
+<!-- - [ ] Real-time inference optimization (ONNX, TensorRT) -->
 - [ ] Integration with clinical PACS systems
-- [ ] Active learning for efficient annotation
+<!-- - [ ] Active learning for efficient annotation -->
 
 ---
 
-<p align="center">
+<!-- <p align="center">
   ⭐ If you find this project useful, please consider giving it a star! ⭐
-</p>
+</p> -->
 
 <p align="center">
   Made with ❤️ for advancing medical AI
