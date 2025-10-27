@@ -113,10 +113,10 @@ For detailed architecture explanation, see [docs/architecture.md](docs/architect
 ## 📊 Dataset
 
 ### Source
-- **Dataset**: [RETOUCH Challenge OCT Dataset](https://retouch.grand-challenge.org/) 
+- **Dataset**: [Dr. Stephanie Chiu - Duker University OCT Dataset](https://people.duke.edu/~sf59/Chiu_BOE_2014_dataset.htm) 
   (publicly available)
-- **Size**: 250 OCT B-scans with expert annotations
-- **Classes**: 3 (Background, Fluid, Drusen)
+- **Size**: 110 OCT B-scans with expert annotations
+- **Classes**: 8 (Back ground, NFL, GCL-IPL, INL, OPL, ONL-ISM, ISE, OS-RPE )
 - **Resolution**: 512×512 pixels
 
 ### Preprocessing Pipeline
@@ -130,13 +130,13 @@ For detailed architecture explanation, see [docs/architecture.md](docs/architect
    - Elastic deformation
 
 ### Data Split
-- Training: 175 images (70%)
-- Validation: 37 images (15%)
-- Test: 38 images (15%)
+- Training: 80 images (70%)
+- Validation: 15 images (15%)
+- Test: 15 images (15%)
 
-<p align="center">
+<!-- <p align="center">
   <img src="results/data_distribution.png" alt="Data Distribution" width="500"/>
-</p>
+</p> -->
 
 ---
 
@@ -146,26 +146,26 @@ For detailed architecture explanation, see [docs/architecture.md](docs/architect
 
 | Metric | Score | Clinical Relevance |
 |--------|-------|-------------------|
-| **Dice Coefficient** | **0.847** | Excellent overlap with ground truth |
-| **IoU (Jaccard)** | **0.735** | High spatial agreement |
-| **Sensitivity** | **0.892** | Low false negative rate (critical for screening) |
-| **Specificity** | **0.941** | Low false positive rate |
-| **Pixel Accuracy** | **0.956** | Overall correctness |
+| **Dice Coefficient** | **0.874** | Excellent overlap with ground truth |
+| **IoU (Jaccard)** | **0.783** | High spatial agreement |
+| **Precision** | **0.0.876** | Low false negative rate (critical for screening) |
+| **Recall** | **0.0.888** | Low false positive rate |
+| **Pixel Accuracy** | **0.980** | Overall correctness |
 
 ### Learning Curves
 
 <p align="center">
-  <img src="results/metrics/loss_curves.png" alt="Loss Curves" width="800"/>
+  <img src="results/metrics/loss.png" alt="Loss Curves" width="800"/>
 </p>
 
-<p align="center">
+<!-- <p align="center">
   <img src="results/metrics/dice_evolution.png" alt="Dice Evolution" width="800"/>
-</p>
+</p> -->
 
 ### Qualitative Results
 
 <p align="center">
-  <img src="results/predictions/comparison_grid.png" alt="Predictions" width="900"/>
+  <img src="results/predictions/grille.png" alt="Predictions" width="900"/>
 </p>
 
 **Interpretation**:
