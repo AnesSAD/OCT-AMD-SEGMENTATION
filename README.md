@@ -327,12 +327,10 @@ OCT-AMD-Segmentation/
 
 2. **AMD Detection**: [Recent paper you read this weekend]
 
-3. **OCT Imaging**: [Reference paper on OCT]
-
+3. **OCT Imaging**: S. J. Chiu, M. J. Allingham, P. S. Mettu, S. W. Cousins, J. A. Izatt, S. Farsiu, "Kernel regression based segmentation of optical coherence tomography images with diabetic macular edema", ( BIOMEDICAL OPTICS EXPRESS), 6(4), pp. 1172-1194, April, 2015   
 ### Datasets
 
-- RETOUCH Challenge: https://retouch.grand-challenge.org/
-- [Other relevant datasets]
+- S. J. Chiu, M. J. Allingham, P. S. Mettu, S. W. Cousins, J. A. Izatt, S. Farsiu, "Kernel regression based segmentation of optical coherence tomography images with diabetic macular edema", ( BIOMEDICAL OPTICS EXPRESS), 6(4), pp. 1172-1194, April, 2015   
 
 ### Tools & Frameworks
 
