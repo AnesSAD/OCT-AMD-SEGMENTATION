@@ -76,7 +76,7 @@ diagnosis support.
 ### U-Net Overview
 
 <p align="center">
-  <img src="docs/unet_architecture.png" alt="U-Net Architecture" width="600"/>
+  <img src="docs/u-net-architecture.png" alt="U-Net Architecture" width="600"/>
 </p>
 
 **U-Net** (Ronneberger et al., 2015) is a convolutional neural network designed for 
