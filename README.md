@@ -1,7 +1,7 @@
 # 🏥 OCT AMD Biomarker Segmentation with U-Net
 
 <p align="center">
-  <img src="results/predictions/banner.png" alt="AMD Segmentation Example" width="800"/>
+  <img src="results/predictions/UNet.png" alt="AMD Segmentation Example" width="800"/>
 </p>
 
 <p align="center">
