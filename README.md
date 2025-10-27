@@ -29,7 +29,7 @@
 ## 🔬 Overview
 
 This project implements **U-Net architecture** for automated segmentation of Age-related 
-Macular Degeneration (AMD) biomarkers in Optical Coherence Tomography (OCT) images.
+Macular Degeneration (AMD) retina layers in Optical Coherence Tomography (OCT) images.
 
 AMD is the leading cause of irreversible blindness in elderly populations worldwide. 
 Early and accurate detection of AMD biomarkers (layer thickness) is critical 
@@ -62,7 +62,7 @@ diagnosis support.
 ✅ **Reproducibility**
 - Seed setting for deterministic results
 - Comprehensive logging and experiment tracking
-- Docker support for environment consistency
+<!-- - Docker support for environment consistency -->
 
 ✅ **Production-Ready**
 - Inference API for deployment
@@ -104,6 +104,7 @@ Output: Segmentation Mask (3 classes, 512×512)
 - Batch Normalization for training stability
 - ReLU activation functions
 - Dropout (p=0.2) for regularization
+- Adam optimizer with learning rate scheduling
 
 <!-- For detailed architecture explanation, see [docs/architecture.md](docs/architecture.md) -->
 
@@ -112,7 +113,7 @@ Output: Segmentation Mask (3 classes, 512×512)
 ## 📊 Dataset
 
 ### Source
-- **Dataset**: [Dr. Stephanie Chiu - Duker University OCT Dataset](https://people.duke.edu/~sf59/Chiu_BOE_2014_dataset.htm) 
+- **Dataset**: [Dr. Stephanie Chiu - Duke University OCT Dataset](https://people.duke.edu/~sf59/Chiu_BOE_2014_dataset.htm) 
   (publicly available)
 - **Size**: 110 OCT B-scans with expert annotations
 - **Classes**: 8 (Back ground, NFL, GCL-IPL, INL, OPL, ONL-ISM, ISE, OS-RPE )
@@ -147,8 +148,8 @@ Output: Segmentation Mask (3 classes, 512×512)
 |--------|-------|-------------------|
 | **Dice Coefficient** | **0.874** | Excellent overlap with ground truth |
 | **IoU (Jaccard)** | **0.783** | High spatial agreement |
-| **Precision** | **0.876** | Low false negative rate (critical for screening) |
-| **Recall** | **0.888** | Low false positive rate |
+| **Precision** | **0.876** | Low false positive rate |
+| **Recall** | **0.888** | Low false negative rate (critical for screening) |
 | **Pixel Accuracy** | **0.980** | Overall correctness |
 
 ### Learning Curves
@@ -168,8 +169,8 @@ Output: Segmentation Mask (3 classes, 512×512)
 </p>
 
 **Interpretation**:
-- ✅ Accurate detection of small drusen (critical for early AMD diagnosis)
-- ✅ Precise fluid boundary delineation (important for treatment monitoring)
+- ✅ Accurate detection of retina layers (critical for early AMD diagnosis)
+- ✅ Accurate recognition of anomalies (important for treatment monitoring)
 - ⚠️ Some under-segmentation in low-contrast regions (area for improvement)
 
 <!-- For detailed results analysis, see [results/comparison_table.md](results/comparison_table.md) -->
