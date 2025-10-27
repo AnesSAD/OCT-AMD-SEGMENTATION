@@ -148,8 +148,8 @@ For detailed architecture explanation, see [docs/architecture.md](docs/architect
 |--------|-------|-------------------|
 | **Dice Coefficient** | **0.874** | Excellent overlap with ground truth |
 | **IoU (Jaccard)** | **0.783** | High spatial agreement |
-| **Precision** | **0.0.876** | Low false negative rate (critical for screening) |
-| **Recall** | **0.0.888** | Low false positive rate |
+| **Precision** | **0.876** | Low false negative rate (critical for screening) |
+| **Recall** | **0.888** | Low false positive rate |
 | **Pixel Accuracy** | **0.980** | Overall correctness |
 
 ### Learning Curves
